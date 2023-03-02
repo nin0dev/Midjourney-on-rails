@@ -1,0 +1,57 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :titre, style: "display: block" %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.datetime_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :contenu, style: "display: block" %>
+    <%= form.text_area :contenu %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div>
+    <%= form.label :réalisateur, style: "display: block" %>
+    <%= form.text_area :réalisateur %>
+  </div>
+
+  <div>
+    <%= form.label :sortie, style: "display: block" %>
+    <%= form.date_field :sortie %>
+  </div>
+
+  <div>
+    <%= form.label :genre, style: "display: block" %>
+    <%= form.text_area :genre %>
+  </div>
+
+  <div>
+    <%= form.label :auteur, style: "display: block" %>
+    <%= form.text_area :auteur %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
