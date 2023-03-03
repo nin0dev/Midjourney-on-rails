@@ -2,11 +2,11 @@
 
 <h1>Posts</h1>
 
-<button class="btn-primary"><%= link_to "New post", new_post_path %></button>
+<button class="btn btn-primary"><%= link_to "New post", new_post_path, class:"text-light text-decoration-none" %></button>
 
-<div id="posts" class="d-flex flex-wrap mt-3 justify-content-center container-fluid-lg">
+<div id="posts" class="d-flex flex-wrap mt-3 justify-content-center">
   <% @posts.each do |post| %>
-    <div class="card col-md-6 col-lg-6 mx-1 mt-4">
+    <div class="card col-md-4 mx-1 mt-4">
       <%= image_tag post.image %>
       <div class="card-body">
         <h2><%= post.titre %></h2>
@@ -18,7 +18,7 @@
       <hr/>
       <div class="card-body">
         <p><%= post.auteur %> • <%= post.date %></p>
-        <p class="text-light text-decoration-none"><button type="button" class="btn btn-dark"><%= link_to "Show this post", post %></button></p>
+        <p><button type="button" class="btn btn-light border-dark"><%= link_to "Show this post", post, class:"text-dark text-decoration-none" %></button></p>
       </div>
     </div>
   <% end %>
