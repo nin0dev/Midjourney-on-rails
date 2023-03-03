@@ -1,11 +1,11 @@
 <div class="d-flex">
   <%= image_tag post.image, class:"w-50" %>
-  <div class="container">
+  <div class="container px-5">
     <h2><%= post.titre %></h2>
     <p><%= post.contenu %></p>
     <p><%= post.réalisateur %> • <%= post.genre %></p>
     <p><b>Date de sortie : </b><%= post.sortie %></p>
     <hr/>
-    <p><%= post.auteur %> • <%= post.date %></p>
+    <p><b>Auteur : </b><%= post.auteur %> • <%= post.date %></p>
   </div>
 </div>
