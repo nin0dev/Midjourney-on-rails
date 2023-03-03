@@ -1,39 +1,42 @@
-<p style="color: green"><%= notice %></p>
-
 <section class="text-light bg-dark"> 
-<div class="col-lg-12 vh-100" style="background-image: url('https://cdn.discordapp.com/attachments/1008571078211280957/1081214353992339526/nin0_pastel_artwork_fantastic_landscape_layout_38f9425c-5b0d-462f-9d43-bcb15b0c23e1.png');">
-  <div class="mask d-flex flex-column px-5 justify-content-center align-items-start vh-100 " style="background-color: rgba(0, 0, 0, 0.7);">
-      <h2>Bienvenue sur Posters !</h2>
-      <p class="w-50 mb-5">
-        Notre blog est dédié aux meilleurs posters de film de tous les temps !
-        Ici, nous avons pour objectif de rassembler les posters de films les plus iconiques, les plus originaux et les plus créatifs jamais créés. Des classiques du cinéma aux films contemporains, en passant par tous les genres et tous les styles, notre blog présente une sélection variée de posters qui ont marqué l'histoire du cinéma.
-        Que vous soyez un cinéphile passionné ou simplement intéressé par le design graphique, notre blog est l'endroit idéal pour découvrir et apprécier les meilleurs posters de film de tous les temps. Abonnez-vous dès maintenant pour ne manquer aucun de nos articles.
-      </p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-      </svg>
+  <div class="vh-100" style="background-image: url('https://cdn.discordapp.com/attachments/1008571078211280957/1081214353992339526/nin0_pastel_artwork_fantastic_landscape_layout_38f9425c-5b0d-462f-9d43-bcb15b0c23e1.png'); background-size: cover;">
+    <div class="d-flex flex-column px-5 justify-content-center align-items-start vh-100 " style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="container">  
+        <h2>Bienvenue sur Posters !</h2>
+        <p class="w-50 mb-5">
+          Notre blog est dédié aux meilleurs posters de film de tous les temps !
+          Ici, nous avons pour objectif de rassembler les posters de films les plus iconiques, les plus originaux et les plus créatifs jamais créés. Des classiques du cinéma aux films contemporains, en passant par tous les genres et tous les styles, notre blog présente une sélection variée de posters qui ont marqué l'histoire du cinéma.
+          Que vous soyez un cinéphile passionné ou simplement intéressé par le design graphique, notre blog est l'endroit idéal pour découvrir et apprécier les meilleurs posters de film de tous les temps. Abonnez-vous dès maintenant pour ne manquer aucun de nos articles.
+        </p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
 
-<h1>Posts</h1>
+<div class="container">
 
-<div id="posts" class="d-flex flex-wrap mt-3 justify-content-center">
-  <% @posts.each do |post| %>
-    <div class="card col-md-4 mx-1 mt-4">
-      <%= image_tag post.image %>
-      <div class="card-body">
-        <h2><%= post.titre %></h2>
-        <p class="text-truncate"><%= post.contenu %></p>
-        <p><%= post.réalisateur %></p>
-        <p><%= post.genre %></p>
-        <p><%= post.sortie %></p>
+  <h1>Posts</h1>
+
+  <div id="posts" class="d-flex flex-wrap mt-3 justify-content-center">
+    <% @posts.each do |post| %>
+      <div class="card col-md-4 mx-1 mt-4">
+        <%= image_tag post.image %>
+        <div class="card-body">
+          <h2><%= post.titre %></h2>
+          <p class="text-truncate"><%= post.contenu %></p>
+          <p><%= post.réalisateur %></p>
+          <p><%= post.genre %></p>
+          <p><%= post.sortie %></p>
+        </div>
+        <hr/>
+        <div class="card-body">
+          <p><%= post.auteur %> • <%= post.date %></p>
+          <p><button type="button" class="btn btn-light border-dark"><%= link_to "Show this post", post, class:"text-dark text-decoration-none" %></button></p>
+        </div>
       </div>
-      <hr/>
-      <div class="card-body">
-        <p><%= post.auteur %> • <%= post.date %></p>
-        <p><button type="button" class="btn btn-light border-dark"><%= link_to "Show this post", post, class:"text-dark text-decoration-none" %></button></p>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
